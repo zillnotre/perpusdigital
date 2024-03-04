@@ -11,27 +11,31 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group">
+                        <label>ID Buku</label>
+                        <input type="text" class="form-control" name="buku_id" value="{{old('buku_id')}}"
+                    </div>
+                    <br>
                         <label>Judul Buku</label>
                         <input type="text" class="form-control" name="judul" value="{{old('judul')}}"
                     </div>
                     <br>
-                    
+
                         <label>Nama Penulis</label>
                         <input type="text" class="form-control" name="penulis" value="{{old('penulis')}}"
                 </div>
                 <br>
-                    
-                    
-                    
+
+
+
                         <label>Penerbit</label>
                         <input type="text" class="form-control" name="penerbit" value="{{old('penerbit')}}"
             </div>
             <br>
-                         
-                   
+
+
                         <label>Tahun Terbit</label>
                         <input type="number" class="form-control" name="tahun_terbit" value="{{old('tahun_terbit')}}"
-                    
+
                 </div>
                 <br>
                 <div class="card-footer">

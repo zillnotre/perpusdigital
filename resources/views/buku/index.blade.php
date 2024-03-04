@@ -42,6 +42,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>ID Buku</th>
                                             <th>Judul Buku</th>
                                             <th>Nama Penulis</th>
                                             <th>Penerbit</th>
@@ -56,6 +57,7 @@
                                         @foreach($buku as $buku)
                                         <tr>
                                             <td>{{$no++}}</td>
+                                            <td>{{$buku->buku_id}}</td>
                                             <td>{{$buku->judul}}</td>
                                             <td>{{$buku->penulis}}</td>
                                             <td>{{$buku->penerbit}}</td>

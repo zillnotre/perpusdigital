@@ -20,11 +20,11 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('buku', bukuController::class);
+Route::resource('buku', bukuController::class)->middleware('login');
 Route::resource('peminjaman_buku', peminjaman_bukuController::class);
 
-Route::get('/login', [SessionController::class,'index']);
-Route::get('sesi', [SessionController::class,'index']);
-Route::post('/sesi/login',[SessionController::class,'login']);
+Route::get('/login', [SessionController::class,'index'])->middleware('guest');
+Route::get('sesi', [SessionController::class,'index'])->middleware('guest');
+Route::post('/sesi/login',[SessionController::class,'login'])->middleware('guest');
 Route::get('/sesi/logout', [SessionController::class,'logout']);
 

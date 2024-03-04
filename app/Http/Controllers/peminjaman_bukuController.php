@@ -25,7 +25,7 @@ class peminjaman_bukuController extends Controller
      */
     public function create()
     {
-        //
+        return view('peminjaman_buku.create');
     }
 
     /**
@@ -36,7 +36,23 @@ class peminjaman_bukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'user_id' => 'required',
+            'buku_id' => 'required',
+            'tanggal_peminjaman' => 'required',
+            'tanggal_pengembalian' => 'required',
+            'status_peminjaman' => 'required',
+
+        ]);
+        peminjaman_buku::create([
+            'user_id' =>$request->user_id,
+            'buku_id' =>$request->buku_id,
+            'tanggal_peminjaman' =>$request->tanggal_peminjaman,
+            'tanggal_pengembalian' =>$request->tanggal_pengembalian,
+            'status_peminjaman' =>$request->status_peminjaman,
+
+        ]);
+        return redirect('peminjaman_buku')->with('success','Data berhasil ditambahkan!');
     }
 
     /**

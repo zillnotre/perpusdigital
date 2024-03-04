@@ -1,6 +1,10 @@
 @extends('layouts/app')
 @section('content')
 
+@if(session('success'))
+<p class="alert alert-success">{{session('success')}}</p>
+@endif
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -40,6 +44,7 @@
                                                 <thead>
                                                     <tr>
                                                     <th>No</th>
+                                                    <th>Peminjaman ID</th>
                                                          <th>User ID</th>
                                                                     <th>Buku ID</th>
                                                                     <th>Tanggal Peminjaman</th>
@@ -88,4 +93,8 @@
 
                                         <!-- End of Footer -->
 
-                                     
+
+
+
+
+

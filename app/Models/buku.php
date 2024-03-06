@@ -12,3 +12,4 @@ class buku extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['judul','penulis','penerbit','tahun_terbit'];
 }
+             

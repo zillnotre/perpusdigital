@@ -10,11 +10,7 @@
                 <h6>Form Tambah Data Buku</h6>
                 </div>
                 <div class="card-body">
-                    <div class="form-group">
-                        <label>ID Buku</label>
-                        <input type="text" class="form-control" name="buku_id" value="{{old('buku_id')}}"
-                    </div>
-                    <br>
+                    
                         <label>Judul Buku</label>
                         <input type="text" class="form-control" name="judul" value="{{old('judul')}}"
                     </div>

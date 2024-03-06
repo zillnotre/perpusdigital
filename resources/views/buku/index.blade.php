@@ -42,7 +42,6 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>ID Buku</th>
                                             <th>Judul Buku</th>
                                             <th>Nama Penulis</th>
                                             <th>Penerbit</th>
@@ -57,18 +56,16 @@
                                         @foreach($buku as $buku)
                                         <tr>
                                             <td>{{$no++}}</td>
-                                            <td>{{$buku->buku_id}}</td>
                                             <td>{{$buku->judul}}</td>
                                             <td>{{$buku->penulis}}</td>
                                             <td>{{$buku->penerbit}}</td>
                                             <td>{{$buku->tahun_terbit}}</td>
                                             <td>
-                                                <a class="btn btn-sm btn-primary" href="{{url('buku/'.$buku->buku_id.'/edit')}}">Edit</a>
+                                                <a class="btn btn-sm btn-primary" href="{{url('buku/'.$buku->id.'/edit')}}">Edit</a>
                                                 <form action="{{url('buku/'.$buku->id)}}" method="POST" style="display: inline-block">
                                                 @csrf
                                             @method('delete')
                                         <button class="btn btn sm btn-danger" onclick="return confirm ('Apakah anda ingin menghapus data ini?')">Delete</button></form>
-                                            </td>
                                         </tr>
                                         @endforeach
 

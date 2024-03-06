@@ -72,9 +72,11 @@ class peminjaman_bukuController extends Controller
      * @param  \App\Models\peminjaman_buku  $peminjaman_buku
      * @return \Illuminate\Http\Response
      */
-    public function edit(peminjaman_buku $peminjaman_buku)
+    public function edit($id)
     {
         //
+        $data = peminjaman_buku::where('id',$id)->first();
+        return view('peminjaman_buku.edit')->with('data',$data);
     }
 
     /**
@@ -84,9 +86,26 @@ class peminjaman_bukuController extends Controller
      * @param  \App\Models\peminjaman_buku  $peminjaman_buku
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, peminjaman_buku $peminjaman_buku)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'user_id'=>'required',
+            'buku_id'=>'required',
+            'tanggal_peminjaman'=>'required',
+            'tanggal_pengembalian'=>'required',
+            'status_peminjaman'=>'required',
+
+        ]);
+        $data = ([
+            'user_id'=>$request->user_id,
+            'buku_id'=>$request->buku_id,
+            'tanggal_peminjaman'=>$request->tanggal_peminjaman,
+            'tanggal_pengembalian'=>$request->tanggal_pengembalian,
+            'status_peminjaman'=>$request->tanggal_peminjaman,
+
+        ]);
+        peminjaman_buku::where('id',$id)->update($data);
+        return redirect('peminjaman_buku')->with('success','Data berhasil dirubah!');
     }
 
     /**
@@ -95,8 +114,9 @@ class peminjaman_bukuController extends Controller
      * @param  \App\Models\peminjaman_buku  $peminjaman_buku
      * @return \Illuminate\Http\Response
      */
-    public function destroy(peminjaman_buku $peminjaman_buku)
+    public function destroy($id)
     {
-        //
+        peminjaman_buku::where('id',$id)->delete();
+        return redirect('peminjaman_buku')->with('success','Data buku dihapus!');
     }
 }

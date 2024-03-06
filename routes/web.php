@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\bukuController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\peminjaman_bukuController;
 use App\Http\Controllers\SessionController;
+use App\Models\ulasan_buku;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +21,14 @@ use App\Http\Controllers\SessionController;
 Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
+// Route::post('/delete',[MainController::class,'_delete']);Route::put('buku/{id}', 'BukuController@update');
+
 
 Route::resource('buku', bukuController::class)->middleware('login');
 Route::resource('peminjaman_buku', peminjaman_bukuController::class);
+Route::resource('ulasan_buku', \App\Http\Controllers\ulasan_bukuController::class);
+
+
 
 Route::get('/login', [SessionController::class,'index'])->middleware('guest');
 Route::get('sesi', [SessionController::class,'index'])->middleware('guest');

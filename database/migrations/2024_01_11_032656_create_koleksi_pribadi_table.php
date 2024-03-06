@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('koleksi_pribadi', function (Blueprint $table) {
-            $table->id('koleksi_id');
+            $table->id();
             $table->integer('user_id');
             $table->integer('buku_id');
             $table->timestamps();

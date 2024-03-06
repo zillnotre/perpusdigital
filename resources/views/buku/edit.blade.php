@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<form action="{{url('buku/'.$data->buku_id)}}" method="post">
+<form action="{{url('buku/'.$data->id)}}" method="POST">
     @csrf
     @method('PUT')
     <div class="row">

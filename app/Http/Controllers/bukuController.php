@@ -75,7 +75,7 @@ class bukuController extends Controller
     public function edit($id)
     {
         //
-        $data = Buku::where('buku_id',$id)->first();
+        $data = Buku::where('id',$id)->first();
         return view('buku.edit')->with('data',$data);
     }
 
@@ -86,7 +86,7 @@ class bukuController extends Controller
      * @param  \App\Models\buku  $buku
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
 {
     $request->validate([
         'judul' => 'required',
@@ -102,7 +102,7 @@ class bukuController extends Controller
         'tahun_terbit' =>$request->tahun_terbit,
 
     ]);
-    Buku::where('buku_id',$id)->update($data);
+    Buku::where('id',$id)->update($data);
     return redirect('buku')->with('success','Data berhasil dirubah!');
 }
 
@@ -114,7 +114,8 @@ class bukuController extends Controller
      */
     public function destroy($id)
     {
-        Buku::where('buku_id',$id)->delete();
+        Buku::where('id',$id)->delete();
         return redirect('buku')->with('success','Data buku dihapus!');
     }
+
 }

@@ -34,10 +34,10 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Peminjaman Buku</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Ulasan Buku</h6>
                         </div>
                         <div class="card-body">
-                            <a class="btn btn-primary mb-3" href="{{route('peminjaman_buku.create')}}">Tambah Buku</a>
+                            <a class="btn btn-primary mb-3" href="{{route('ulasan_buku.create')}}">Tambah Ulasan</a>
 
                             <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -46,9 +46,8 @@
                                                     <th>No</th>
                                                          <th>User ID</th>
                                                                     <th>Buku ID</th>
-                                                                    <th>Tanggal Peminjaman</th>
-                                                                    <th>Tanggal Pengembalian</th>
-                                                                    <th>Status Peminjaman</th>
+                                                                    <th>Ulasan</th>
+                                                                    <td>Rating</td>
                                                                     <th>Aksi</th>
 
                                                                     </tr>
@@ -56,17 +55,16 @@
 
                                                                 <tbody>
                                                                     <?php $no= 1 ?>
-                                                                    @foreach($peminjaman_buku as $peminjaman_buku)
+                                                                    @foreach($ulasan_buku as $ulasan_buku)
                                                                     <tr>
                                                                         <td>{{$no++}}</td>
-                                                                        <td>{{$peminjaman_buku->user_id}}</td>
-                                                                        <td>{{$peminjaman_buku->buku_id}}</td>
-                                                                        <td>{{$peminjaman_buku->tanggal_peminjaman}}</td>
-                                                                        <td>{{$peminjaman_buku->tanggal_pengembalian}}</td>
-                                                                        <td>{{$peminjaman_buku->status_peminjaman}}</td>
+                                                                        <td>{{$ulasan_buku->user_id}}</td>
+                                                                        <td>{{$ulasan_buku->buku_id}}</td>
+                                                                        <td>{{$ulasan_buku->ulasan}}</td>
+                                                                        <td>{{$ulasan_buku->rating}}</td>
                                                                         <td>
-                                                                            <a class="btn btn-sm btn-primary" href="{{url('peminjaman_buku/'.$peminjaman_buku->id.'/edit')}}">Edit</a>
-                                                <form action="{{url('peminjaman_buku/'.$peminjaman_buku->id)}}" method="POST" style="display: inline-block">
+                                                                            <a class="btn btn-sm btn-primary" href="{{url('ulasan_buku/'.$ulasan_buku->id.'/edit')}}">Edit</a>
+                                                <form action="{{url('ulasan_buku/'.$ulasan_buku->id)}}" method="POST" style="display: inline-block">
                                                 @csrf
                                             @method('delete')
                                         <button class="btn btn sm btn-danger" onclick="return confirm ('Apakah anda ingin menghapus data ini?')">Delete</button></form>

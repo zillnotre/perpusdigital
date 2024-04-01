@@ -20,17 +20,23 @@
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('buku.index')}}">
-                    <i class="fas fa-fw fa-table" style="color: blue;olor: blue;">Data Buku</span></a>
+                    <i class="fas fa-fw fa-table" style="color: blue;olor: blue;">Buku</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('peminjaman_buku.index')}}">
                     <i class="fas fa-fw fa-tachometer-alt" style="color: blue;"></i>
-                    <span style="color: blue;">Data Peminjam</span></a>
+                    <span style="color: blue;">Peminjaman Buku </span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('kategori_buku.index')}}">
+                    <i class="fas fa-fw fa-tachometer-alt" style="color: blue;"></i>
+                    <span style="color: blue;">Kategori Buku</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('ulasan_buku.index')}}">
                     <i class="fas fa-fw fa-tachometer-alt" style="color: blue;"></i>
-                    <span style="color: blue;">Data Ulasan Buku</span></a>
+                    <span style="color: blue;">Ulasan Buku</span></a>
             </li>
 
 

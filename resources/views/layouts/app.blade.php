@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    
-  
+
+
 
     <title>Web Perpustakaan</title>
 
@@ -57,7 +57,7 @@
                     @yield('content')
 
                     <!-- Content Row -->
-                    
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -71,7 +71,7 @@
 
         </div>
         <!-- End of Content Wrapper -->
-      
+
     </div>
     <!-- End of Page Wrapper -->
 
@@ -101,7 +101,7 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    
+
     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
     <script src="    {{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 

@@ -36,8 +36,8 @@
                     <div class="card-body p-3">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            
-                            
+
+
                             <div class="col-lg-6 offset-lg-3">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -53,15 +53,16 @@
                                         <div class="form-group">
                                             <input type="password" name="password" value="{{Session::get('password')}}" class="form-control form-control-user"
                                              placeholder="Masukkan Password Anda...">
+                                             <a href="">Registrasi</a>
                                         </div>
-                                        
+
                                         </div>
                                        <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
-                                        
-                                        
+
+
                                     </form>
                                     <hr>
-                                    
+
                                 </div>
                             </div>
                         </div>

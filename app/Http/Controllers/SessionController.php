@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+
 
 class SessionController extends Controller
 {
@@ -40,4 +42,25 @@ class SessionController extends Controller
         Auth::logout();
         return redirect('sesi')->with('success','Berhasil Logout');
     }
-}
+
+    public function register(){
+        return view('sesi/register');
+    }
+
+    public function save_register(Request $request){
+        // dd($request->all());
+        User::create([
+            'name' =>$request->name,
+            'email' =>$request->email,
+            'password' =>bcrypt($request->password),
+            'level' =>'admin',
+
+
+        ]);
+
+        return view('sesi.index')->with('success','Akun Anda Berhasil Dibuat!');
+    }
+
+
+    }
+

@@ -53,7 +53,10 @@
                                         <div class="form-group">
                                             <input type="password" name="password" value="{{Session::get('password')}}" class="form-control form-control-user"
                                              placeholder="Masukkan Password Anda...">
-                                             <a href="">Registrasi</a>
+
+                                        </div>
+                                        <div class="text-center">
+                                            <a class="small" href="{{route('sesi.register')}}">Buat Akun</a>
                                         </div>
 
                                         </div>

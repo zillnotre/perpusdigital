@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\bukuController;
+use App\Http\Controllers\BukuController;
+
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\peminjaman_bukuController;
 use App\Http\Controllers\SessionController;
@@ -20,8 +21,7 @@ use App\Models\ulasan_buku;
 
 Route::get('/', function () {
     return view('dashboard');
-})->name('dashboard');
-// Route::post('/delete',[MainController::class,'_delete']);Route::put('buku/{id}', 'BukuController@update');
+})->name('/dashboard');
 
 
 Route::resource('buku', bukuController::class)->middleware('login');
@@ -31,13 +31,19 @@ Route::resource('kategori_buku', \App\Http\Controllers\kategori_bukuController::
 
 
 
+Route::get('/register', [SessionController::class, 'register'])->name('sesi.register');
 Route::get('/login', [SessionController::class,'index'])->middleware('guest');
 Route::get('sesi', [SessionController::class,'index'])->middleware('guest');
+Route::get('/sesi', [SessionController::class, 'index'])->name('sesi');
+Route::post('/save_register', [SessionController::class, 'save_register'])->name('save_register');
+
+
 Route::post('/sesi/login',[SessionController::class,'login'])->middleware('guest');
 Route::get('/sesi/logout', [SessionController::class,'logout']);
 
+
 Route::group(['middleware' => ['auth','CekLevel:admin']],function(){
-    route::get('/buku', 'bukuController@index')->name('buku');
+    route::get('/buku', 'BukuController@index')->name('buku');
     route::get('/peminjaman_buku', 'peminjaman_buku@index')->name('peminjaman_buku');
     route::get('/kategori_buku', 'kategori_bukuController@index')->name('kategori_buku');
 });

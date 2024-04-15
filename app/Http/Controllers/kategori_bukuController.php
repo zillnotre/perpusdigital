@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kategori_buku;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class kategori_bukuController extends Controller
